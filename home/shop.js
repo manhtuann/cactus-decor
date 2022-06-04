@@ -83,8 +83,7 @@ listCart.forEach(function (el) {
     <span class="best-seller">${el.title}</span>
     
 
-    <div class="item-image">
-    <img src=${el.bg}>
+    <div class="item-image" style="background-image: url('${el.bg}');">
     <a href='../detail/detail.html?id=${el.id}'><div class="quick-view">Quick View</div></a>
     
     </div>
@@ -97,5 +96,5 @@ listCart.forEach(function (el) {
     </div>`;
     
 });
-
+{   /* <img src=${el.bg}> */}
 allItem.innerHTML = allItemHtml;

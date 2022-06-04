@@ -23,7 +23,7 @@
 }
 
 body{
-    display: flex;
+    /* display: flex;    */
     background-color: rgb(237,237,238);
     position: relative;
     justify-content: center;
