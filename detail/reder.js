@@ -21,17 +21,18 @@ var cart = [];
 
 function addCart(a) {
     var boxsp = a.parentElement.children;
-    var img = boxsp[1].src;
-    var price = boxsp[2].innerText;
-    var name = boxsp[0].innerText;
-    var sl = boxsp[3].value;
-    var sp = new Array(img, price, name, sl)
+    var img = boxsp[1].children[0].src;
+    var price = boxsp[3].innerText;
+    var name = boxsp[2].innerText;
+    // var sl = boxsp[3].value;
+    var sp = new Array(img, price, name)
     cart.push(sp)
     showCart()
 
     // lưu giỏ hàng
 
     sessionStorage.setItem('cart',JSON.stringify(cart));
+console.log(boxsp);
 }
 function showCart() {
     document.getElementById('countsp').innerHTML = cart.length;

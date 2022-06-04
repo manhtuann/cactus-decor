@@ -11,13 +11,15 @@ html {
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     margin-top: 150px;
-    max-width: 1000px;
-    height: 100%;
+    max-width: 1250px;
+    /* height: 100vh; */
 }
-
+.link-product {
+    margin-left: 20px;
+}
 .detail-product {
     display: flex;
     justify-content: space-around;
@@ -202,7 +204,7 @@ input[type='number'] {
 }
 
 .slick-slide img {
-    margin-left: 16px;
+    margin-left: 50px;
     height: 200px;
 }
 
@@ -236,6 +238,9 @@ input[type='number'] {
     border: none;
     z-index: 2;
     padding: 10px 20px;
+}
+.bx {
+    margin-right: -22px;
 }
 
 

@@ -78,11 +78,13 @@ const allItem = document.querySelector('#all-item');
 let allItemHtml = '';
 
 listCart.forEach(function (el) {
-    allItemHtml += `<div class="item-cont">
+    allItemHtml += `
+    <div class="item-cont">
     <span class="best-seller">${el.title}</span>
     
 
-    <div class="item-image" style="background-image: url('${el.bg}');">
+    <div class="item-image">
+    <img src=${el.bg}>
     <a href='../detail/detail.html?id=${el.id}'><div class="quick-view">Quick View</div></a>
     
     </div>
@@ -91,7 +93,7 @@ listCart.forEach(function (el) {
         <div class="old-pri"><del>${el.oldPri}</del></div>
         <div class="new-pri">${el.newPri}</div>
     </div>
-    <button class="add">Add to Cart</button>
+    <button class="add" onclick='addCart(this)'>Add to Cart</button>
     </div>`;
     
 });
