@@ -15,7 +15,7 @@ function addCart(a) {
     // lưu giỏ hàng
 
     sessionStorage.setItem('cart',JSON.stringify(cart));
-console.log(boxsp);
+
 }
 
 
