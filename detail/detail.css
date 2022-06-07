@@ -6,9 +6,13 @@
 }
 
 html {
+    width: 93.9%;
     font-family: 'Comic Neue', cursive;
     color: rgb(160, 88, 65);
+    margin: auto;
 }
+
+
 
 .container {
     /* margin-left: auto;
@@ -116,13 +120,14 @@ input[type='number'] {
 }
 
 .btn-cart {
-    width: 90%;
+    width: 100%;
     background-color: rgb(160, 88, 65);
     border: none;
     margin-bottom: 10px;
     font-size: 14px;
     color: #fff;
     cursor: pointer;
+    height: 40px;
 }
 
 .btn svg {

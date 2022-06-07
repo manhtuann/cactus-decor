@@ -61,6 +61,19 @@ document.querySelectorAll(".nav-item").forEach(n => n.addEventListener("click", 
 }));
 
 
+// chat-box
 
+const openChat = document.querySelector(".let-chat");
+const chatBox = document.querySelector(".chat-box");
+
+openChat.addEventListener("click", () => {
+    openChat.classList.toggle("active");
+    chatBox.classList.toggle("active");
+})
+
+document.querySelector(".close-chatbox").addEventListener("click", () => {
+    openChat.classList.remove("active");
+    chatBox.classList.remove("active");
+})
 
  

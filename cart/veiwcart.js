@@ -1,23 +1,14 @@
-ready()
-function ready() {
-    const removeCartButtons = document.getElementsByClassName('cart-remove');
-
-    for (let i = 0; i < removeCartButtons.length; i++) {
-        var button = removeCartButtons[i];
-        button.addEventListener("click", removeCartItems)
-    }
-
-    //change quantity
-    let quantityInputs = document.getElementsByClassName('cart-quantity')
-    for (let i = 0; i < quantityInputs.length; i++) {
-        let input = quantityInputs[i];
-        input.addEventListener("change", updatetotal);
-    }
-}
 
 function removeCartItems(event) {
     let buttonClicked = event.target
-    buttonClicked.parentElement.remove()
+    buttonClicked.parentElement.remove();
+
+    
+    let btn = document.querySelector('.cart-content');
+
+    btn.style.border ='none';
+
+    updatetotal();
 }
 
 function updatetotal() {
@@ -34,6 +25,8 @@ function updatetotal() {
     total = total + (price * quantityElement);
 
     document.getElementsByClassName("total-price")[0].innerText = "$" + total;
+    document.getElementsByClassName("total-price")[1].innerText = "$" + total;
+
 }
 
 function viewCart(){
@@ -44,9 +37,9 @@ function viewCart(){
         result += `
         <div class="cart-content">
         <div class="product">
-            <img src="./cacti/cacti1.webp" alt="" class="cart-img">
+            <img src=${cart[i][0]} alt="" class="cart-img">
             <div class="product-box">
-                <div class="cart-product-title">I'm a product</div>
+                <div class="cart-product-title">${cart[i][2]}</div>
                 <div class="cart-price">${cart[i][1]}</div>
             </div>
             <input type="number" min="1" value="1" class="cart-quantity">
@@ -55,8 +48,8 @@ function viewCart(){
         </div>
     </div> 
         `
+        console.log(cart[i][2]);
     }
-    
     document.getElementById('render').innerHTML = result;
 }
 viewCart()
@@ -70,14 +63,32 @@ for (let i = 0; i < cartBoxes.length; i++) {
     let price = parseFloat(priceElement.innerText.replace("$", ""))
 
     let quantityElement = cartBox.getElementsByClassName("cart-quantity")[0]
-    console.log(cartBox.getElementsByClassName("cart-quantity"));
+    // console.log(cartBox.getElementsByClassName("cart-quantity"));
 
 
     let quantity = quantityElement.value
-    console.log(typeof quantity);
+    // console.log(typeof quantity);
 
 
     total = total + (price * quantity)
 
     document.getElementsByClassName("total-price")[0].innerText = "$" + total;
+    document.getElementsByClassName("total-price")[1].innerText = "$" + total;
+
+}
+ready()
+function ready() {
+    const removeCartButtons = document.getElementsByClassName('cart-remove');
+
+    for (let i = 0; i < removeCartButtons.length; i++) {
+        var button = removeCartButtons[i];
+        button.addEventListener("click", removeCartItems)
+    }
+
+    //change quantity
+    let quantityInputs = document.getElementsByClassName('cart-quantity')
+    for (let i = 0; i < quantityInputs.length; i++) {
+        let input = quantityInputs[i];
+        input.addEventListener("change", updatetotal);
+    }
 }

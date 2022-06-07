@@ -1,34 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Flex:opsz@8..144&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 /* PC */
 
-
-
-.logo-cont{
-    left: 35vw;
-    top:0;
-    position: fixed;
-    z-index: 5;
+body{
+    background-color: #f9fafa;
 }
 
+
+#countsp {
+    color: #A05841;
+    position: absolute;
+    top: 10px;
+}
 .logo-web{
+    top:0;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%);
+    
+    
+}
+
+.logo-web img{
     height: 56px;
     width: 250px;
     object-fit: cover;
 }
-
-body{
-    /* display: flex;    */
-    background-color: rgb(237,237,238);
-    position: relative;
-    justify-content: center;
-}
-
 
 
 h3{
@@ -37,12 +42,12 @@ h3{
     font-size: 17px;
     align-self: center;
     margin-bottom: 20px;
-
 }
 
 
 #main{
     
+    margin: auto;
     width: 93.9%;
     background-color:rgba(0,0,0,0) ;
     z-index: 1;
@@ -52,15 +57,16 @@ h3{
 .bg1{
     top: 0;
     position: fixed;
+    object-fit: cover;
     height: 100%;
     width: 93.8%;
     margin: auto;
     z-index: -1;
-    object-fit: cover;
     
 }
 
 #header{
+    
     top: 0;
     position: fixed;
     width: 93.9%;
@@ -105,7 +111,7 @@ h3{
 .search-cont{
     display: flex;
     position: absolute;
-    width: 300px;
+    width: 350px;
     vertical-align: middle;
     white-space: nowrap;
     top: 6px;
@@ -113,7 +119,7 @@ h3{
 }
 
 .search-cont input{
-    width: 211px;
+    width: 350px;
     height: 40px;
     background: #f9fafa;
     border: none;
@@ -222,23 +228,10 @@ h3{
     opacity: 0.5;
     
 }
-#countsp {
-    position: absolute;
-    top: -14px;
-    right: 14px;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    color: red;
-}
+
 .cart{
     display: flex;
     align-items: center;
-}
-.cart a {
-    height: 56px;
-    line-height: 56px;
 }
 
 .bi-cart3{
@@ -352,7 +345,7 @@ h3{
 .phone-cont{
     display: flex;
     align-items: center;
-    margin-right: -10px;
+    
     width: 323px;
     height: 100%;
 }
@@ -388,8 +381,8 @@ h3{
     z-index: 1;
 }
 
-.text-logo{
-    color: #f9fafa;
+g{
+    fill: #f9fafa;
 }
 
 .text-content h1{
@@ -562,7 +555,7 @@ h3{
 #contact{
     display: flex;
     position: relative;
-    height: 100vh;
+    height: 930px;
     z-index: 1;
     
     
@@ -764,39 +757,143 @@ a{
 }
 
 .chat-box{
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    
+    display: none;
     bottom: 20px;
     right: 20px;
     position: fixed;
-    height: 56px;
-    width: 200px;
-    padding: 0 22px 0 18px;
-    background-color: #A05841;
+    
+    width: 340px;
+    background-color: #f9fafa;
     z-index: 3;
 }
 
-.chat-box:hover{
+.chat-box.active {
+    display: block;
+}
+
+.top-chatbox{
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: #A05841;
+}
+
+.avatar{
+    position: relative;
+    height: 48px;
+    width: 48px;
+    border: 1px solid #f9fafa;
+    border-radius: 50%;
+}
+
+.onl-status{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.mess-infor{
+    margin-left: 10px;
+    color: #f9fafa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mess-infor h4{
+    font-size: 16px;
+}
+
+.mess-infor p{
+    font-size: 13px;
+}
+
+.ti-close{
+    color: #f9fafa;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
 }
 
-.chat-box p{
-    color: #f9fafa;
-    font-size: 18px;
-    margin-left: 10px;
+.main-chatbox{
+    height: 460px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.chat-bar{
+    height: 61px;
+    background-color: #f9fafa;
+    display: flex;
+    align-items: center;
+    
+}
+
+#chat-input{
+    height: 24px;
+    width: 230px;
+    padding: 2px;
+    outline: none;
+    background-color: #f9fafa;
+    padding: 0;
+    margin-left: 20px;
+    font-size: 16px ;
+}
+
+#chat-input::-webkit-scrollbar{
+    display: none;
+}
+
+.ti-face-smile{
+    margin-left: 35px;
+    cursor: pointer;
+}
+
+.bi-paperclip{
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 .bi-chat-text-fill{
     color: #f9fafa;
 }
 
+.let-chat{
+    display: flex;
+    height: 56px;
+    width: 200px;
+    position: fixed;
+    z-index: 6;
+    bottom:20px ;
+    right: 20px;
+    background-color: #A05841;
+    color: #f9fafa;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.let-chat.active {
+    display: none;
+}
+
+.let-chat p{
+    margin-left: 10px;
+}
+
+
 
 /* shop all */
 
 .text-content h2{
     color: #f9fafa;
-    font-size: 59px;
+    font-size: 82px;
     width: 830px;
     text-align: center;
 }
@@ -804,7 +901,7 @@ a{
 .text-content p{
     color: #f9fafa;
     font-size: 15px;
-    width: 678px;
+    width: 756px;
     text-align: center;
     line-height: 1.5;
     letter-spacing: 0.5px;
@@ -871,7 +968,11 @@ a{
     background-size: cover;
     background-position: center;
 }
-
+.item-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 .item-cont p{
     font-size: 18px;
     color: #A05841;
@@ -937,3 +1038,7 @@ a{
 .add:hover{
     opacity: 0.5;
 }
+
+
+/* chat box */
+

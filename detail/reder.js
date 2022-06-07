@@ -1,21 +1,4 @@
-// function renderJs() {
-//     let result = '';
-//     let menu = document.querySelector('.menu')
-//     arr.forEach(item => {
-//         result += `
-//         <div>
-//             <div class="name">
-//             <a href="detail.html?id=${item.id}">${item.name}</a>
-//             </div>
-//             <img src=${item.img} alt="">
-//             <h1 class="title">${item.price}</h1>
-//             <input class="input" type="number" min="1" max="999" pattern="[0-9]*" value="1">
-//             <button onclick="addCart(this)">thêm giỏ hàng</button>
-//         </div>`
-//         menu.innerHTML = result
-//     })
-// }
-// renderJs()
+
 var cart = [];
 
 
@@ -33,6 +16,21 @@ function addCart(a) {
 
     sessionStorage.setItem('cart',JSON.stringify(cart));
 console.log(boxsp);
+}
+
+
+function detailAddCart(a){
+    var cartItem = a.parentElement.children; 
+    var img = cartItem[1].children[0].src;
+    var price = cartItem[1].innerText;
+    var name = cartItem[0].children[0].innerText;
+    var sp2 = new Array(img,price,name)
+    cart.push(sp2)
+    showCart()
+    console.log(name);
+
+    sessionStorage.setItem('cart',JSON.stringify(cart));
+
 }
 function showCart() {
     document.getElementById('countsp').innerHTML = cart.length;
